@@ -1,7 +1,7 @@
 # 📚 Puer Management
 
 ## ✨ Project Summary
-
+[Visit Live Demo](https://umutileri.github.io/Puer_Proje_Website_LayoutV1/) ✨
 Puer Management is a platform for **project management and fair peer evaluation** designed for university student groups and instructors. It aims to transparently track project progress and evaluate team members' contributions using an objective, data-driven system.
 
 **Core Goal:** To eliminate ambiguity in project management and ensure that every team member's contribution is scored fairly.
@@ -42,3 +42,13 @@ This project has been developed using purely **static frontend** technologies to
 * These pages focus only on the design, layout, and responsiveness of the user interface.
 * The current version **does not include any Backend, Database (PostgreSQL), or Python Flask** integration. Form submissions or button clicks are only simulated via static page navigation.
 * Backend and API connections will be integrated in future releases.
+
+---
+
+## 🔮 Future Roadmap (Next Steps)
+
+The following features and integrations are planned for V2 and beyond:
+
+* **Backend Integration:** Connecting the frontend forms and dashboards to the Flask API and PostgreSQL database.
+* **Projects/Tasks Page:** Implementing the dynamic Kanban-style task board and task assignment interface.
+* **JavaScript Logic:** Adding core application logic, including dynamic data fetching and progress bar updates based on API responses.
