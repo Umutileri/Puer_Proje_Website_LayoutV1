@@ -1,4 +1,4 @@
-# 📚 Puer Management Edited
+# 📚 Puer Management
 
 ## ✨ Project Summary
 
