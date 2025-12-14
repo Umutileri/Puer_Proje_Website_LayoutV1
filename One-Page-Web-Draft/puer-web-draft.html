@@ -20,7 +20,20 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <style>
+      #project-title,
+      #summary,
+      #tech-stack-tabs,
+      #visual-mockup {
+        background-color: white !important;
+      }
+
+      #team,
+      #features,
+      #target-audience {
+        background-color: #dadada16 !important; /* beyaza kontrast oluşturur */
+      }
       :root {
+        --bg-light-custom: #f8f9fa;
         --primary: #ff9102;
         --primary-light: #ff8800;
 
@@ -73,6 +86,18 @@
         color: var(--primary-light) !important;
       }
 
+      @media (min-width: 992px) {
+        .navbar-collapse .navbar-nav {
+          margin-left: -50px !important;
+          padding: 0 !important;
+        }
+      }
+
+      .navbar-collapse .navbar-nav {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+      }
       nav .navbar-brand {
         color: white !important;
         transition: color 0.3s;
@@ -87,6 +112,11 @@
       }
       .navbar .btn-search {
         border-radius: 0 0.3rem 0.3rem 0 !important;
+      }
+      .navbar-collapse .navbar-nav {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
       }
 
       .card {
@@ -323,7 +353,7 @@
 
         <div class="collapse navbar-collapse" id="landingNav">
           <ul
-            class="navbar-nav mb-2 mb-lg-0 justify-content-center w-100"
+            class="navbar-nav mb-2 mb-lg-0 justify-content-center"
             id="landing-nav"
           >
             <li class="nav-item">
@@ -504,7 +534,7 @@
       </div>
     </section>
     <!-- Group info hakkında summry section / tamam -->
-    <section id="summary" class="py-5" style="background-color: #fafafa">
+    <section id="summary" class="py-5">
       <div class="container container-xl">
         <div class="text-center mb-5">
           <div
@@ -558,7 +588,7 @@
       </div>
     </section>
     <!-- key features bitti -->
-    <section id="features" class="py-5 bg-white">
+    <section id="features" class="py-5">
       <div class="container container-xl text-center">
         <h2 class="display-5 fw-bold mb-4" style="color: var(--text-dark)">
           Key Features of Puer Management
@@ -854,11 +884,7 @@
       </script>
     </section>
     <!-- target audience bitti -->
-    <section
-      id="target-audience"
-      class="py-5"
-      style="background-color: #f9f9f9"
-    >
+    <section id="target-audience" class="py-5">
       <div class="container text-center">
         <div class="mb-5">
           <div
@@ -938,7 +964,7 @@
       </div>
     </section>
     <!-- visual mockup solda resim(siteden ss) sağda ise yazı -->
-    <section id="visual-mockup" class="py-5 bg-light">
+    <section id="visual-mockup" class="py-5">
       <div class="container container-xl">
         <h2 class="display-5 fw-bold mb-0 text-center text-dark">
           Visual Mockup / Sketch
