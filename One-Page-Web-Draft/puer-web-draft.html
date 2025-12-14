@@ -294,6 +294,7 @@
     data-bs-offset="80"
     tabindex="0"
   >
+    <!-- navbarlar tıklanınca tam hizalı gitmiyor -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
     >
@@ -342,6 +343,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#target-audience">Target Audience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#visual-mockup">Visual Mockup</a>
             </li>
           </ul>
         </div>
@@ -691,7 +695,7 @@
           </div>
 
           <div id="frontendContent">
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
               <div class="col-md-4">
                 <div
                   class="card h-100 shadow-sm p-4 text-center border-0"
@@ -849,7 +853,7 @@
         });
       </script>
     </section>
-
+    <!-- target audience bitti -->
     <section
       id="target-audience"
       class="py-5"
@@ -929,6 +933,61 @@
                 management and accountability.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- visual mockup solda resim(siteden ss) sağda ise yazı -->
+    <section id="visual-mockup" class="py-5 bg-light">
+      <div class="container container-xl">
+        <h2 class="display-5 fw-bold mb-0 text-center text-dark">
+          Visual Mockup / Sketch
+        </h2>
+
+        <div class="row align-items-center g-4 mt-5">
+          <div class="col-md-8 text-center text-md-start">
+            <img
+              src="https://raw.githubusercontent.com/Umutileri/Puer_Proje_Website_LayoutV1/main/One-Page-Web-Draft/puerwebsite.jpg"
+              alt="Puer Management Dashboard Screenshot"
+              class="img-fluid rounded shadow-lg"
+              style="max-width: 100%"
+            />
+          </div>
+
+          <div class="col-md-4 text-center text-md-start">
+            <h5
+              class="fw-bold mb-3 text-center"
+              style="color: var(--text-dark); font-size: 1.6rem"
+            >
+              Dashboard Overview
+            </h5>
+            <p
+              class="text-secondary mb-3"
+              style="font-size: 1.2rem; line-height: 1.5"
+            >
+              This snapshot of our
+              <span class="fw-semibold text-dark">Puer Management</span>
+              dashboard demonstrates a clean and intuitive interface designed
+              for smooth collaboration. It presents a clear overview of project
+              metrics and team activities at a glance.
+            </p>
+            <p
+              class="text-secondary"
+              style="font-size: 1.2rem; line-height: 1.5"
+            >
+              Key elements include
+              <span class="fw-semibold" style="color: orange"
+                >Active Projects</span
+              >,
+              <span class="fw-semibold" style="color: orange"
+                >Completed Tasks</span
+              >, and
+              <span class="fw-semibold" style="color: orange"
+                >Pending Evaluations</span
+              >. Each component uses color-coded visuals, readable typography,
+              and responsive design principles to ensure a professional,
+              user-friendly experience across all devices.
+            </p>
           </div>
         </div>
       </div>
