@@ -119,7 +119,11 @@
         justify-content: center !important;
       }
       #team,
-      #summary {
+      #summary,
+      #features,
+      #tech-stack-tabs,
+      #target-audience,
+      #visual-mockup {
         scroll-margin-top: 65px;
       }
       .card {
@@ -318,15 +322,25 @@
         margin: 0 auto;
         padding: 0 0.75rem;
       }
+      html {
+        scroll-padding-top: 75px; /* navbar yüksekliği kadar */
+      }
+      #team,
+      #summary,
+      #features,
+      #tech-stack-tabs,
+      #target-audience,
+      #visual-mockup {
+        scroll-margin-top: 75px;
+      }
+
+      section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
     </style>
   </head>
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#landingNav"
-    data-bs-offset="65"
-    tabindex="0"
-  >
-    <!-- navbarlar tıklanınca tam hizalı gitmiyor -->
+  <body tabindex="0">
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
     >
@@ -383,7 +397,7 @@
         </div>
       </div>
     </nav>
-    <!-- giriş ekranı HERO SECTION bitti -->
+    <!-- giriş ekranı HERO SECTION -->
     <section
       id="hero"
       class="hero-full-screen d-flex align-items-center text-center"
@@ -428,7 +442,6 @@
         </div>
       </div>
     </section>
-    <!-- TEAM INFO SECTION HOVER UNUTMA CARDLARA O KALDI TEK / harici bitti-->
     <section id="team" class="py-5">
       <div class="container container-xl text-center">
         <h2 class="display-4 fw-bold mb-4" style="color: var(--text-dark)">
@@ -535,7 +548,7 @@
         </div>
       </div>
     </section>
-    <!-- Group info hakkında summry section / tamam -->
+    <!-- Group info hakkında summry section-->
     <section id="summary" class="py-5">
       <div class="container container-xl">
         <div class="text-center mb-5">
@@ -589,7 +602,7 @@
         </div>
       </div>
     </section>
-    <!-- key features bitti -->
+    <!-- key features -->
     <section id="features" class="py-5">
       <div class="container container-xl text-center">
         <h2 class="display-5 fw-bold mb-4" style="color: var(--text-dark)">
@@ -700,7 +713,7 @@
         </div>
       </div>
     </section>
-    <!-- tech stack  bitti ama değişebilir -->
+    <!-- tech stack-->
     <section
       id="tech-stack-tabs"
       class="py-5"
@@ -885,7 +898,7 @@
         });
       </script>
     </section>
-    <!-- target audience bitti -->
+    <!-- target audience -->
     <section id="target-audience" class="py-5">
       <div class="container text-center">
         <div class="mb-5">
@@ -1078,14 +1091,43 @@
     </script>
     <!-- scroll daha yumuşak ve hizalı kayması için -->
     <script>
-      document.querySelectorAll("#landingNav a.nav-link").forEach((link) => {
+      const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        target: "#landingNav",
+        offset: 75,
+      });
+    </script>
+
+    <script>
+      const navLinks = document.querySelectorAll("#landingNav a.nav-link");
+      const sections = Array.from(navLinks).map((link) =>
+        document.querySelector(link.getAttribute("href"))
+      );
+      navLinks.forEach((link, idx) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
+          const top =
+            sections[idx].getBoundingClientRect().top + window.scrollY - 65;
           window.scrollTo({
-            top: target.offsetTop - 65, // navbar yüksekliği
+            top: top,
             behavior: "smooth",
           });
+
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+      window.addEventListener("scroll", () => {
+        const scrollPos = window.scrollY + 70;
+
+        sections.forEach((section, i) => {
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            navLinks.forEach((l) => l.classList.remove("active"));
+            navLinks[i].classList.add("active");
+          }
         });
       });
     </script>
